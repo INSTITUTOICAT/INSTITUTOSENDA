@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto SENDA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <nav class="navbar">
+            <button class="menu-btn" onclick="toggleMenu()">MENÚ</button>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">SENDA</h1>
+            <p class="hero-subtitle">Sistema Educativo<br>Nacional<br>para el Desarrollo<br>Académico</p>
+        </div>
+        
+        <div class="hero-logo">
+            <img src="imagenes/logo.png" alt="Instituto SENDA Logo" style="width: 300px; height: 300px; object-fit: contain; object-position: right;">
+        </div>
+    </section>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <a href="#carreras" onclick="toggleMenu()">Carreras y Bachiller</a>
+        <a href="#inscripcion" onclick="toggleMenu()">Inscripción</a>
+        <a href="#uniformes" onclick="toggleMenu()">Uniformes</a>
+        <a href="#carne" onclick="toggleMenu()">Carné</a>
+        <a href="#conclusion" onclick="toggleMenu()">Conclusión</a>
+    </div>
+
+    <!-- Carreras Section -->
+    <section id="carreras" class="section carreras-section">
+        <nav class="section-nav">
+            <a href="#carreras" class="nav-btn active">CARRERA Y BACHILLER</a>
+            <a href="#inscripcion" class="nav-btn">INCRIPCIÓN</a>
+            <a href="#uniformes" class="nav-btn">UNIFORMES</a>
+            <a href="#carne" class="nav-btn">CARNÉ</a>
+            <a href="#conclusion" class="nav-btn">COCLUSIÓN</a>
+        </nav>
+
+        <h2 class="section-title">Carreras y bachilleratos</h2>
+
+        <div class="carreras-grid">
+            <div class="carrera-card">
+                <div class="carrera-content">
+                    <h3>PERITO CONTADOR<br>Y PERITO EN ADMINISTRACIÓN</h3>
+                    <img src="imagenes/Tipos-de-contabilidad.webp" alt="Contabilidad">
+                    <button class="btn-primary" onclick="showCarreraDetails('contador')">ENTRAR</button>
+                </div>
+            </div>
+
+            <div class="carrera-card">
+                <div class="carrera-content">
+                    <h3>BACHILLERATO EN CIENCIAS Y LETRAS CON<br>ORIENTACION EN CIENCIAS BIOLÓGICAS</h3>
+                    <img src="imagenes/biologa-trabajando-con-muestras.jpg" alt="Ciencias Biológicas">
+                    <button class="btn-primary" onclick="showCarreraDetails('biologicas')">ENTRAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrera Details Modal -->
+    <div id="carreraModal" class="modal">
+        <div class="modal-content">
+            <div id="contadorDetails" class="carrera-details">
+                <h2>PERITO CONTADOR Y PERITO EN ADMINISTRACIÓN</h2>
+                
+                <div class="pricing-info">
+                    <div class="price-item">
+                        <h3>PRECIO DE UNIFORME:</h3>
+                        <p class="price">Q.300.00</p>
+                    </div>
+                    <div class="price-item">
+                        <h3>PRECIO DE COLEGIATURA:</h3>
+                        <p class="price">Q350. 00 MENSUAL</p>
+                    </div>
+                </div>
+
+                <div class="uniform-preview">
+                    <img src="imagenes/Presentación proyecto de estudio académico juvenil multicolor.png" alt="Uniforme">
+                </div>
+
+                <div class="modal-buttons">
+                    <button class="btn-secondary" onclick="closeModal()">VOLVER</button>
+                    <button class="btn-primary" onclick="goToInscripcion()">INSCRIBIRME</button>
+                </div>
+            </div>
+
+            <div id="biologicasDetails" class="carrera-details">
+                <h2>BACHILLERATO EN CIENCIAS Y LETRAS CON ORIENTACIÓN EN CIENCIAS BIOLÓGICAS</h2>
+                
+                <div class="pricing-info">
+                    <div class="price-item">
+                        <h3>PRECIO DE LA FILIPINA:</h3>
+                        <p class="price">Q.300.00</p>
+                    </div>
+                    <div class="price-item">
+                        <h3>PRECIO DE COLEGIATURA:</h3>
+                        <p class="price">Q350. 00 MENSUAL</p>
+                    </div>
+                </div>
+
+                <div class="uniform-preview">
+                    <img src="imagenes/Presentación proyecto de estudio académico juvenil multicolor (1).png" alt="Uniforme">
+                </div>
+
+                <div class="modal-buttons">
+                    <button class="btn-secondary" onclick="closeModal()">VOLVER</button>
+                    <button class="btn-primary" onclick="goToInscripcion()">INSCRIBIRME</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inscripción Section -->
+    <section id="inscripcion" class="section inscripcion-section">
+        <nav class="section-nav">
+            <a href="#carreras" class="nav-btn">CARRERA Y BACHILLER</a>
+            <a href="#inscripcion" class="nav-btn active">INCRIPCIÓN</a>
+            <a href="#uniformes" class="nav-btn">UNIFORMES</a>
+            <a href="#carne" class="nav-btn">CARNÉ</a>
+            <a href="#conclusion" class="nav-btn">COCLUSIÓN</a>
+        </nav>
+
+        <div class="form-container">
+            <div class="form-header">
+                <h2>FICHA DE DATOS</h2>
+                <p class="form-subtitle">ESCUELA<br>SISTEMA EDUCATIVO NACIONAL PARA EL DESARROLLO ACADÉMICO</p>
+            </div>
+
+            <form id="inscripcionForm" class="inscripcion-form">
+                <div class="form-group">
+                    <label>NOMBRE DEL ALUMNO</label>
+                    <input type="text" id="nombreAlumno" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>GRADO</label>
+                        <select id="grado" required>
+                            <option value="">Seleccionar</option>
+                            <option value="CUARTO">CUARTO</option>
+                            <option value="QUINTO">QUINTO</option>
+                            <option value="SEXTO">SEXTO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>GRUPO</label>
+                        <input type="text" id="grupo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>EDAD</label>
+                        <input type="number" id="edad" required>
+                    </div>
+                    <div class="form-group">
+                        <label>FECHA DE NACIMIENTO</label>
+                        <input type="date" id="fechaNacimiento" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>LUGAR DE NACIMIENTO</label>
+                        <input type="text" id="lugarNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label>NACIONALIDAD</label>
+                        <input type="text" id="nacionalidad" value="GUATEMALA" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>DOMICILIO</label>
+                    <input type="text" id="domicilio" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>ALÉRGICO A</label>
+                        <input type="text" id="alergias">
+                    </div>
+                    <div class="form-group">
+                        <label>TIPO DE SANGRE</label>
+                        <input type="text" id="tipoSangre" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>NOMBRE DE LA MADRE</label>
+                    <input type="text" id="nombreMadre" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>NÚMERO DE TELÉFONO</label>
+                        <input type="tel" id="telefonoMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>OCUPACIÓN</label>
+                        <input type="text" id="ocupacionMadre" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>NOMBRE DEL PADRE</label>
+                    <input type="text" id="nombrePadre" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>NÚMERO DE TELÉFONO</label>
+                        <input type="tel" id="telefonoPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>OCUPACIÓN</label>
+                        <input type="text" id="ocupacionPadre" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>OBSERVACIONES</label>
+                    <textarea id="observaciones" rows="4"></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn-secondary" onclick="location.href='#carreras'">VOLVER</button>
+                    <button type="submit" class="btn-primary">INSCRIBIR</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Uniformes Section -->
+    <section id="uniformes" class="section uniformes-section">
+        <nav class="section-nav">
+            <a href="#carreras" class="nav-btn">CARRERA Y BACHILLER</a>
+            <a href="#inscripcion" class="nav-btn">INCRIPCIÓN</a>
+            <a href="#uniformes" class="nav-btn active">UNIFORMES</a>
+            <a href="#carne" class="nav-btn">CARNÉ</a>
+            <a href="#conclusion" class="nav-btn">COCLUSIÓN</a>
+        </nav>
+
+        <h2 class="section-title">Nuestro Uniforme oficial</h2>
+
+        <div class="uniformes-grid">
+            <div class="uniforme-card">
+                <img src="imagenes/Presentación proyecto de estudio académico juvenil multicolor (1).png" alt="Filipina">
+                <h3>FILIPINA HOMBRE Y MUJER</h3>
+            </div>
+
+            <div class="uniforme-card">
+                <img src="imagenes/Presentación proyecto de estudio académico juvenil multicolor.png" alt="Uniforme Diario">
+                <h3>UNIFORME DE DIARIO HOMBRE Y MUJER</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carné Section -->
+    <section id="carne" class="section carne-section">
+        <nav class="section-nav">
+            <a href="#carreras" class="nav-btn">CARRERA Y BACHILLER</a>
+            <a href="#inscripcion" class="nav-btn">INCRIPCIÓN</a>
+            <a href="#uniformes" class="nav-btn">UNIFORMES</a>
+            <a href="#carne" class="nav-btn active">CARNÉ</a>
+            <a href="#conclusion" class="nav-btn">COCLUSIÓN</a>
+        </nav>
+
+        <div class="carne-container">
+            <h2>Generador de Carné Estudiantil</h2>
+            
+            <div class="carne-upload">
+                <h3>Sube tu fotografía</h3>
+                <input type="file" id="fotoInput" accept="image/*" onchange="previewPhoto(event)">
+                <label for="fotoInput" class="upload-btn">Seleccionar Imagen</label>
+                <p class="upload-hint">Formato: JPG, PNG (máx. 5MB)</p>
+            </div>
+
+            <div id="carnePreview" class="carne-preview" style="display: none;">
+                <div class="carne-card">
+                    <div class="carne-header">
+                        <div class="carne-logo">
+                            <svg viewBox="0 0 100 100" width="60" height="60">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+                                <text x="50" y="35" text-anchor="middle" font-size="12" fill="#1e3a8a" font-weight="bold">INSTITUTO</text>
+                                <text x="50" y="70" text-anchor="middle" font-size="16" fill="#1e3a8a" font-weight="bold">SENDA</text>
+                            </svg>
+                        </div>
+                        <div class="carne-photo">
+                            <img id="carnePhotoPreview" src="/placeholder.svg" alt="Foto del estudiante">
+                        </div>
+                    </div>
+                    
+                    <div class="carne-info">
+                        <h3 id="carneNombre">NOMBRE APELLIDO</h3>
+                        <div class="carne-details">
+                            <p><strong>EDAD:</strong> <span id="carneEdad">--</span> AÑOS</p>
+                            <p><strong>GRADO:</strong> <span id="carneGrado">--</span></p>
+                            <p><strong>FECHA DE NACIMIENTO:</strong> <span id="carneFecha">--/--/----</span></p>
+                            <p><strong>ALERGIAS:</strong> <span id="carneAlergias">Ninguna</span></p>
+                            <p><strong>MADRE:</strong> <span id="carneMadre">--</span></p>
+                            <p><strong>PADRE:</strong> <span id="carnePadre">--</span></p>
+                            <p><strong>TELÉFONO:</strong> <span id="carneTelefono">----</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="carne-footer">
+                        <p class="carne-id">ID: <span id="carneID">------</span></p>
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="downloadCarne()">Descargar Carné</button>
+            </div>
+
+            <div id="carneSuccess" class="carne-success" style="display: none;">
+                <div class="success-icon">✓</div>
+                <h2>YA!! ESTÁS INSCRITO</h2>
+                <h3>TU CARNÉ ESTÁ LISTO!!</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusión Section -->
+    <section id="conclusion" class="section conclusion-section">
+        <nav class="section-nav">
+            <a href="#carreras" class="nav-btn">CARRERA Y BACHILLER</a>
+            <a href="#inscripcion" class="nav-btn">INCRIPCIÓN</a>
+            <a href="#uniformes" class="nav-btn">UNIFORMES</a>
+            <a href="#carne" class="nav-btn">CARNÉ</a>
+            <a href="#conclusion" class="nav-btn active">COCLUSIÓN</a>
+        </nav>
+
+        <div class="conclusion-content">
+            <div class="conclusion-text">
+                <img src="imagenes/logo.png" alt="Instituto SENDA" class="conclusion-logo" style="width: 120px; height: 120px; object-fit: contain;">
+                
+                <h2>Muchas gracias</h2>
+                
+                <p class="conclusion-message">
+                    El instituto SENDA expresa su mas sincero agradecimiento a todos los quienes han sido parte 
+                    fundamental de nutra comunidad educativa.<br><br>
+                    A nuestros estudiantes, por su esfuerzo y dedicacion; a los docentes, por su compromiso y 
+                    entrega en la formacion de nuevas generaciones
+                </p>
+
+                <div class="conclusion-goals">
+                    <p>1. fortalecer la atencion al cliente</p>
+                    <p>2. optimizar los recursos y procesos internos</p>
+                    <p>3. mejorar la educacion para optener muy buenos resultados en la vida de los estudiantes</p>
+                    <p>4. ser la mejor opcion para la educacion de tus hijos</p>
+                </div>
+
+                <div class="conclusion-contact">
+                    <p>www.SENDA_2025</p>
+                    <p>555- 5678</p>
+                </div>
+
+                <button class="btn-primary" onclick="location.href='#home'">GRACIAS</button>
+            </div>
+
+            <div class="conclusion-image">
+                <img src="imagenes/grupo-multietnico-jovenes-estudiantes-felices-pie-al-aire-libre_171337-11812.jpg" alt="Estudiantes felices">
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
